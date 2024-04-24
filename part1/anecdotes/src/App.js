@@ -13,7 +13,7 @@ const App=()=> {
     'The only way to go fast, is to go well.'
   ]
   const [selected, setSelected] = useState(0)
-  const [votes,setVotes] = useState(Array(anecdotes.length).fill(0))
+  const [votes,setVotes] = useState(anecdotes.map(m=>0))//useState(Array(anecdotes.length).fill(0))
   const [voted,setVoted] = useState(0)
   const [most,setMost] = useState(0)
   console.log('votes initial', votes)

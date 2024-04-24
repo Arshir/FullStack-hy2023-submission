@@ -5,6 +5,7 @@ import Total from "./components/Total"
 const App=()=> {
  
   const course ={
+    id:1,
   name:'Half stack application development',
    parts: [ 
     {
@@ -22,13 +23,9 @@ const App=()=> {
    ]
   }
 
-  return (
-    <div >
-       <Header course={course}/>
-       <Content content={course}/>
-       <Total total={31}/>
-    </div>
-  );
+  return <Course course={course}/>
+
+ 
 }
 
 export default App;
