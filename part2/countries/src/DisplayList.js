@@ -4,7 +4,7 @@ const DisplayList= ({list})=>{
     else{
         return(
             <ul>
-               { list.map(i=>  <li> i </li> )}
+               { list.map(i=>  <li> {i} </li> )}
 
             </ul>
         )
