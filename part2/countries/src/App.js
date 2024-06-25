@@ -41,7 +41,7 @@ No  matches. Specify another filter</div>
   if(search)
   {
     console.log('type search term', search)
-    const filterCountries = countries.filter(f=>f["name"]["common"].startsWith(search))
+    const filterCountries = countries.filter(f=>f["name"]["common"].toLowerCase().includes(search.toLowerCase()))
     let count= filterCountries.length
      console.log('filtered countries',filterCountries)
    
@@ -51,7 +51,7 @@ No  matches. Specify another filter</div>
       Too many matches . Please specify another filter</div>
     else if(count>1)
       {
-         countryNames = filterCountries.map(c=>c.name.common)
+         countryNames = filterCountries.map(c=> c.name.common)
          console.log('Country names',countryNames)
          message =''
       }
@@ -83,12 +83,11 @@ No  matches. Specify another filter</div>
         <div>
           <input name='search' value={search} onChange={(event)=>{ event.preventDefault(); setSearch(event.target.value)}}/>
           <ShowMessage message={message} />
-          <DisplayList list={countryNames}  />
+          <DisplayList list={countryNames} showDetail={setSearch}  />
           <ShowDetail country={country} />
         </div>
      )
       
-
 
 
 }
